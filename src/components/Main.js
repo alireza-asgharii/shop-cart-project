@@ -1,10 +1,10 @@
-import React from 'react';
-import Products from './Products';
+import React from "react";
+import Products from "./Products";
 
 const Main = () => {
   return (
     <>
-     <Products /> 
+      <Products />
     </>
   );
 };

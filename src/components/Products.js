@@ -1,21 +1,20 @@
-import React, {useContext} from 'react';
+import React, { useContext } from "react";
 
 //Styles
-import styles from '../styles/products.module.scss';
+import styles from "../styles/products.module.scss";
 
 //Components
-import Product from './shared/Product';
+import Product from "./shared/Product";
 
 //Context
-import { DataContextProvider } from '../Context/ApiContextProvider';
+import { DataContextProvider } from "../Context/ApiContextProvider";
 
 const Products = () => {
-
   const data = useContext(DataContextProvider);
 
   return (
     <div className={styles.container}>
-      {data.map(item => (
+      {data.map((item) => (
         <Product key={item.id} data={item} />
       ))}
     </div>
