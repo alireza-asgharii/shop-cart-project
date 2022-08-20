@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgba(51, 51, 51, 0.488);
+  margin-top: 100px;
+  background: #fff;
+  margin: 130px 15px 10px;
+  border-radius: 7px;
+  padding: 20px;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  padding: 10px;
+  img {
+    max-width: 100%;
+    height: 240px;
+  }
+}
+
+.textContainer {
+  padding: 30px 20px 40px;
+  border: 1px solid rgba(51, 51, 51, 0.488);
+  border-radius: 7px;
+
+  h1 {
+    color: #5463ff;
+    font-size: 1.2rem;
+    padding: 5px 0 25px;
+  }
+
+  .description {
+    padding-bottom: 25px;
+    text-align: justify;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0 0 45px;
+    color: rgba(51, 51, 51, 0.863);
+
+    span {
+      color: #f77e21;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      background: #3ec70b;
+      color: #fff;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: inline-block;
+      box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2),
+        0 2px 10px 1px rgba(0, 0, 0, 0.056);
+    }
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      color: #fff;
+      font-weight: bold;
+      background: #5463ff;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all ease 0.3s;
+    }
+
+    a:hover {
+      background: #3b46c3;
+    }
+  }
+}
+
+@media screen and (min-width: 560px) {
+  .container {
+    margin: 130px 35px 10px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .container {
+    margin: 130px 70px 10px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .container {
+    flex-direction: row;
+
+    
+  }
+
+
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin: 130px 160px 10px;
+
+    .imgContainer {
+      height: 400px;
+      margin-right: 28px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
