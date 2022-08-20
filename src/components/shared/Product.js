@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //Styles
 import styles from "../../styles/product.module.scss";
@@ -7,7 +8,7 @@ import styles from "../../styles/product.module.scss";
 import { spliter } from "../../helper/function";
 
 const Product = (props) => {
-  const { title, price, image } = props.data;
+  const { title, price, image, id } = props.data;
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
@@ -17,7 +18,7 @@ const Product = (props) => {
         <h6>{spliter(title)}</h6>
         <p>{price} $</p>
         <div className={styles.bottomContiner}>
-          <a href="#">detalis</a>
+          <Link to={`/products/${id}`}>detalis</Link>
           <button className={styles.addItem}>Add to Cart</button>
         </div>
       </div>

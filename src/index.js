@@ -1,21 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import axios from 'axios';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import axios from "axios";
 
-axios.defaults.baseURL = 'https://fakestoreapi.com';
+axios.defaults.baseURL = "https://fakestoreapi.com";
 
-axios.interceptors.response.use((response) => {
-  return response.data
-}, (err) => {
-  return Promise.reject(err);
-})
+axios.interceptors.response.use(
+  (response) => {
+    return response.data;
+  },
+  (err) => {
+    return Promise.reject(err);
+  }
+);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <BrowserRouter>
     <App />
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
