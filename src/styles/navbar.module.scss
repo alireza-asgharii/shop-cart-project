@@ -1,0 +1,69 @@
+$colorIcon: #5463ff;
+$colorIconHover: #2431c7;
+
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.112),
+    0 2px 16px 20px rgba(0, 0, 0, 0.023);
+
+  h1 {
+    font-size: 1.1rem;
+    color: $colorIcon;
+    border-bottom: 3px solid $colorIcon;
+
+    :hover {
+      color: $colorIconHover;
+      border-bottom: 3px solid $colorIconHover;
+    }
+  }
+
+  a {
+    color: #5463ff;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 560px) {
+    padding: 10px 40px;
+  }
+
+  @media screen and (min-width: 760px) {
+    padding: 10px 70px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 10px 160px;
+  }
+}
+
+.cartIcon {
+  width: 40px;
+  position: relative;
+  display: inline-block;
+
+  .shopIcon {
+    font-size: 2rem;
+  }
+
+  .number {
+    position: absolute;
+    top: -5px;
+    left: 20px;
+    background-color: #2431c7;
+    color: #fff;
+    padding: 0 5px;
+    border-radius: 40%;
+    line-height: 17px;
+    height: 17px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
