@@ -1,0 +1,10 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: all ease .3s;
+  @media screen and (min-width: 1400px) {
+    padding: 0 37px;
+  }
+}
