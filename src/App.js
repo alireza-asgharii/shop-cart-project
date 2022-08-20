@@ -1,17 +1,20 @@
-import './App.css';
+import "./App.css";
 
 //Components
-import Footer from './components/Footer';
-import Main from './components/Main';
-import Navbar from './components/shared/Navbar';
+import Footer from "./components/Footer";
+import Main from "./components/Main";
+import Navbar from "./components/shared/Navbar";
+import ApiContextProvider from "./Context/ApiContextProvider";
 
 function App() {
   return (
-   <>
-      <Navbar />
-      <Main />
-      <Footer />
-   </>
+    <>
+      <ApiContextProvider>
+        <Navbar />
+        <Main />
+        <Footer />
+      </ApiContextProvider>
+    </>
   );
 }
 
