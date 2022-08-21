@@ -15,7 +15,7 @@ const reducer = (state, action) => {
     case "ADD_ITEM":
       if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
         state.selectedItems.push({
-          ...action.paylod,
+          ...action.payload,
           quantity: 1,
         });
       }
