@@ -1,7 +1,7 @@
 import "./App.css";
 
 //Components
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Navbar from "./components/shared/Navbar";
 import ApiContextProvider from "./Context/ApiContextProvider";
@@ -14,7 +14,7 @@ function App() {
         <CartContextProider>
           <Navbar />
           <Main />
-          <Footer />
+          {/* <Footer /> */}
         </CartContextProider>
       </ApiContextProvider>
     </>
