@@ -7,6 +7,7 @@ import Detalis from "./shared/Detalis";
 
 //styles
 import styles from '../styles/main.module.scss';
+import CartShop from "./CartShop";
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
       <Routes>
         <Route  path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Detalis />} />
+        <Route path="/cartshop" element={<CartShop />} />
         <Route path="/*" element={<Navigate to='/products' /> } />
       </Routes>
     </div>
