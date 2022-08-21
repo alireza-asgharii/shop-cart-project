@@ -1,0 +1,130 @@
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 100px;
+  padding: 10px 20px;
+}
+
+.productConatiner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.totalBox {
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid rgba(51, 51, 51, 0.364);
+  border-radius: 7px;
+
+  div {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  div:nth-child(2) {
+    padding-bottom: 50px;
+  }
+
+  div:nth-child(3) {
+    justify-content: space-between;
+    padding-bottom: 10px;
+  }
+
+  h4 {
+    color: #5463ff;
+  }
+
+  .clear {
+    color: #34a853;
+    appearance: none;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    padding-bottom: 4px;
+
+    @media screen and (min-width: 760px) {
+      cursor: pointer;
+    }
+  }
+  .clear:hover {
+    color: #167d32;
+  }
+
+  .checkout {
+    display: inline-block;
+    background: #34a853;
+    border: none;
+    color: #fff;
+    padding: 0 15px;
+    height: 29px;
+    line-height: 29px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all ease 0.3s;
+    // box-shadow: rgba(0 0 0 / 7%) 0px 1px 1px, rgba(0 0 0 / 7%) 0px 2px 2px,
+    //   rgba(0 0 0 / 7%) 0px 4px 4px, rgba(0 0 0 / 7%) 0px 4px 8px,
+    //   rgba(0 0 0 / 7%) 0px 9px 16px;
+  }
+
+  .checkout:hover {
+    background: #167d32;
+  }
+}
+
+
+//empty and checkout
+.emptyCart {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+  h1 {
+    color: #167d32;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    background: #5463ff;
+    padding: 4px 8px 7px;
+    display: inline-block;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: all ease .3s;
+  } 
+  a:hover {
+    background: #3440c3;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 150px;
+    margin-top: 130px;
+
+    .totalBox {
+      width: 37%;
+      margin-left: 30px;
+      height: fit-content;
+    }
+
+    .productConatiner {
+      margin-top: 0;
+    }
+  }
+}
