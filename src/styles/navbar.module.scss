@@ -28,6 +28,11 @@ $colorIconHover: #2431c7;
   a {
     color: #5463ff;
     text-decoration: none;
+    cursor: default;
+
+    @media screen and (min-width: 660px) {
+      cursor: pointer;
+    }
   }
 
   @media screen and (min-width: 560px) {
