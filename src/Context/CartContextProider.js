@@ -10,7 +10,19 @@ const initialState = {
   checkout: false,
 };
 
+const sumTotal = (selectedItems) => {
+  const totalCount = selectedItems.reduce((total, product) => {
+    return total + product.quantity;
+  }, 0);
+  const total = selectedItems.reduce((total, product) => {
+    return (total + (product.price * product.quantity))
+  }, 0).toFixed(2)
+
+  return {total, totalCount}
+};
+
 const reducer = (state, action) => {
+  console.log(state)
   switch (action.type) {
     case "ADD_ITEM":
       if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
@@ -19,24 +31,24 @@ const reducer = (state, action) => {
           quantity: 1,
         });
       }
-      return { ...state };
+      return { ...state, ...sumTotal(state.selectedItems) };
     case "REMOVE_ITEM":
       const newSelecteditems = state.selectedItems.filter(
         (item) => item.id !== action.payload.id
       );
-      return { ...state, selectedItems: [...newSelecteditems] };
+      return { ...state, ...sumTotal(newSelecteditems),  selectedItems: [...newSelecteditems]};
     case "PLUS_ITEM":
       const findIndexP = state.selectedItems.findIndex(
         (item) => item.id === action.payload.id
       );
       state.selectedItems[findIndexP].quantity++;
-      return { ...state };
+      return { ...state, ...sumTotal(state.selectedItems) };
     case "LOW_ITEM":
       const findIndexL = state.selectedItems.findIndex(
         (item) => item.id === action.payload.id
       );
       state.selectedItems[findIndexL].quantity--;
-      return { ...state };
+      return { ...state, ...sumTotal(state.selectedItems) };
     case "CHECKOUT":
       return {
         selectedItems: [],
@@ -56,11 +68,11 @@ const reducer = (state, action) => {
   }
 };
 
-const CartContextProider = ({children}) => {
+const CartContextProider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <CartContext.Provider value={{state, dispatch}}>
+    <CartContext.Provider value={{ state, dispatch }}>
       {children}
     </CartContext.Provider>
   );
