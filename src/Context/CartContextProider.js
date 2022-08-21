@@ -22,7 +22,6 @@ const sumTotal = (selectedItems) => {
 };
 
 const reducer = (state, action) => {
-  console.log(state)
   switch (action.type) {
     case "ADD_ITEM":
       if (!state.selectedItems.find((item) => item.id === action.payload.id)) {
@@ -31,7 +30,7 @@ const reducer = (state, action) => {
           quantity: 1,
         });
       }
-      return { ...state, ...sumTotal(state.selectedItems) };
+      return { ...state, ...sumTotal(state.selectedItems), checkout: false };
     case "REMOVE_ITEM":
       const newSelecteditems = state.selectedItems.filter(
         (item) => item.id !== action.payload.id
