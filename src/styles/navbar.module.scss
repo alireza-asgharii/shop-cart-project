@@ -2,6 +2,7 @@ $colorIcon: #5463ff;
 $colorIconHover: #2431c7;
 
 .container {
+  z-index: 20;
   position: fixed;
   top: 0;
   width: 100%;

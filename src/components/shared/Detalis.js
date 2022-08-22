@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 //Context
 import { DataContextProvider } from "../../Context/ApiContextProvider";
+import SkeletonDetalis from "../../Skeleton/SkeletonDetalis";
 
 //Styles
 import styles from "../../styles/detalis.module.scss";
@@ -33,6 +34,8 @@ const Details = () => {
         </div>
       </div>
     );
+  } else {
+    return <SkeletonDetalis />
   }
 };
 

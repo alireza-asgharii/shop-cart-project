@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
+
 //Icons
 import { HiPlus } from "react-icons/hi";
 import { AiOutlineMinus } from "react-icons/ai";
@@ -20,6 +21,7 @@ import { CartContext } from "../../Context/CartContextProider";
 const Product = (props) => {
   const { state, dispatch } = useContext(CartContext);
   const { title, price, image, id } = props.data;
+
   
   return (
     <div className={styles.container}>
