@@ -2,9 +2,153 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  transition: all ease .3s;
+  transition: all ease 0.3s;
   @media screen and (min-width: 1400px) {
     padding: 0 37px;
   }
   z-index: 5;
+}
+
+.sortContainer {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 20px;
+  padding: 0 0 15px 40px;
+  border-bottom: 1px solid rgba(172, 168, 168, 0.277);
+
+  @media screen and (min-width: 660px) {
+    padding-left: 100px;
+  }
+
+  .iconContainer {
+    margin-right: 20px;
+  }
+
+  a {
+    padding: 0 10px;
+    text-decoration: none;
+    color: rgba(51, 51, 51, 0.774);
+    transition: all ease 0.3s;
+    user-select: none;
+  }
+
+  @media screen and (min-width: 660px) {
+    .selected {
+      color: #5463ff;
+    }
+  }
+
+  .iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      font-size: 1.2rem;
+      margin-right: 10px;
+
+      @media screen and (min-width: 660px) {
+        margin-right: 0;
+      }
+    }
+
+    .sortBy {
+      cursor: context-menu;
+      user-select: none;
+    }
+
+    @media screen and (min-width: 560px) {
+      cursor: pointer;
+
+      .sortBy {
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    .items {
+      z-index: 40;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: #fff;
+      width: 100%;
+      height: 300px;
+      padding: 20px 10px;
+      border-radius: 30px 30px 0 0;
+      user-select: none;
+
+      //animation
+      transform: translateY(200%);
+
+      .top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-left: 10px;
+
+        .closeIcon {
+          font-size: 1.5rem;
+          margin-right: 15px;
+        }
+
+        h4 {
+          font-size: 1.2rem;
+        }
+      }
+
+      a {
+        margin: 4px 0;
+        padding: 10px 10px 10px;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: default;
+        border-bottom: 1px solid rgba(172, 168, 168, 0.277);
+      }
+    }
+
+    .openSort {
+      animation: openSort ease 0.3s forwards;
+    }
+    .closeSort {
+      animation: closeSort ease 0.3s forwards;
+    }
+  }
+
+  @keyframes openSort {
+    0% {
+      transform: translateY(200%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes closeSort {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(200%);
+    }
+  }
+}
+
+@media screen and (min-width: 660px) {
+  .items {
+    .top h4 {
+      display: none;
+    }
+
+    .doneIcon {
+      display: none;
+    }
+
+    .closeIcon {
+      display: none;
+    }
+  }
 }
